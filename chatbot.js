@@ -37,8 +37,6 @@ const messageInput = document.getElementById('messageInput');
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-        // 🚀 Send message to your webhook and get a response
-// 🚀 Send message to your webhook and get a response
 async function callWebhook(userMessage) {
     console.log('➡️ Sending message to webhook:', userMessage);
 
@@ -58,7 +56,6 @@ async function callWebhook(userMessage) {
         const data = await response.json();
         console.log('✅ Parsed JSON:', data);
 
-        // ✅ Fixed: Access the nested object property
         const reply = data.object?.choices?.[0]?.message?.content ||
             data.choices?.[0]?.message?.content ||
             '⚠️ No reply received.';
